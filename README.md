@@ -8,19 +8,18 @@ The intuition behind the method is that you first use your fitted model to predi
 In the linked [Jupyter notebook](https://github.com/stubberf/Feature_Importance), a function is coded that does just that. Starting with the iconic Boston housing dataset, which contains 13 different features, a random forest model trained to predict the median house price. Overall the model performs very well on the test dataset. This fitted model is then passed to a function called “find_feature_importance”. (One quick comment here I am sure there are many ways to code this function. This is just one method to explore this concept.) The function returns a DataFrame where each row contains the name of the feature that was shuffled and the value of the difference in the evaluation metric for the baseline and shuffled feature. The function randomly shuffles each feature by default 10 times.
 
 The process shows that 3 features standout as being the most important to the model.
-No alt text provided for this image
 
-![Boxplot of feature importance.](https://media.licdn.com/dms/image/C4E12AQF88hzK7XE0hQ/article-inline_image-shrink_400_744/0?e=1577318400&v=beta&t=EsR2JcTVe3ofQe3BTyUgxw7Q3KmW79Wy18tQqyZfS1s)
+![Boxplot of feature importance from Random Forest model.](https://github.com/stubberf/Feature_Importance/blob/master/Feature_Importance_RF.png)
 - LSTAT = % lower status of the population
 - RM = average number of rooms per dwelling
 - DIS = weighted distances to five Boston employment centers
 
 
-A second model was fitted to the same dataset and showed similar values scores for the test set. The most important features for this model are different from the first. The features RM and LSTAT switch for most and second most important features.
-No alt text provided for this image
+A second model was fitted to the same dataset and showed similar values scores for the test set. The most important features for this model are different from the first. The features RM and LSTAT switch for most and second most important features. The features TAX (TAX = full-value property-tax rate per $10,000) and PTRATIO (PTRATIO = pupil-teacher ratio by town) become the 3rd and 4th important features.
 
-The features TAX (TAX = full-value property-tax rate per $10,000) and PTRATIO (PTRATIO = pupil-teacher ratio by town) become the 3rd and 4th important features.
-
+![Boxplot of feature importance from Random Forest model.](https://github.com/stubberf/Feature_Importance/blob/master/Feature_Importance_SVM.png)
+- LSTAT = % lower status of the population
+- RM = average number of rooms per dwelling
 - TAX = full-value property-tax rate per $10,000
 - PTRATIO = pupil-teacher ratio by town
 
